@@ -1,0 +1,58 @@
+﻿<Page x:Class="DeviceRepairCRM.OrderFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DeviceRepairCRM"
+      mc:Ignorable="d" 
+      d:DesignHeight="1052"
+      d:DesignWidth="1512">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+
+            <TextBlock 
+                Text="Поиск"
+                Style="{StaticResource TextBlockBase}"/>
+
+            <TextBox 
+                Style="{StaticResource TextBoxBase}"
+                Width="190"
+                Height="40"
+                Margin="4"
+                x:Name="OrderSearchTextBox"/>
+
+            <Border Style="{StaticResource MainMenuBorder}"
+                    Background="{StaticResource BGFocusColor}"
+                    Margin="5">
+                <Button x:Name="IsInQueueBt"
+                        Content="В очереди"
+                        Style="{StaticResource MainMenuButton}"
+                        Foreground="{StaticResource BGRedColor}"/>
+            </Border>
+
+            <Border Style="{StaticResource MainMenuBorder}"
+                    Background="{StaticResource BGFocusColor}"
+                    Margin="5">
+                <Button x:Name="IsCompleteBt"
+                        Content="Выполнен"
+                        Style="{StaticResource MainMenuButton}"
+                        Foreground="{StaticResource BGGreenColor}"/>
+            </Border>
+        </StackPanel>
+        
+        <ScrollViewer 
+            Grid.Column="1" 
+            HorizontalScrollBarVisibility="Hidden">
+            <WrapPanel Width="1300"
+                x:Name="OrderPageStackPanel">
+            </WrapPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Page>

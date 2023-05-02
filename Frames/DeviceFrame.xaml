@@ -1,0 +1,103 @@
+﻿<Page x:Class="DeviceRepairCRM.DeviceFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DeviceRepairCRM"
+      mc:Ignorable="d" 
+      d:DesignHeight="1052"
+      d:DesignWidth="1512">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="310"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox
+            Style="{StaticResource TextBoxBase}"
+            Width="600" 
+            Margin="10"
+            Height="40" 
+            Text="Поиск"
+            HorizontalAlignment="Left"/>
+
+        <ComboBox 
+            Width="300"
+            Margin="10"
+            Height="40" 
+            HorizontalAlignment="Right"
+            Background="{StaticResource BGDarkColor}" 
+            Foreground="White" 
+            FontSize="30"
+            FontFamily="Segoe UI Black">
+            <ComboBoxItem Content="wewer"/>
+            <ComboBoxItem Content="wewedasdr"/>
+            <ComboBoxItem Content="wewerdddd"/>
+        </ComboBox>
+
+        <Border 
+            Style="{StaticResource MainMenuBorder}"
+            Padding="10" 
+            Grid.Column="1"
+            Margin="10"
+            HorizontalAlignment="Right">
+            <Button 
+                Style="{StaticResource MainMenuButton}"
+                FontSize="20"
+                x:Name="DeviceAddBt"
+                Content="Новый девайс"/>
+        </Border>
+
+        <ScrollViewer 
+            VerticalScrollBarVisibility="Hidden"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0">
+
+            <WrapPanel 
+                x:Name="DeviceList">
+            </WrapPanel>
+        </ScrollViewer>
+
+        <ScrollViewer 
+            VerticalScrollBarVisibility="Hidden" 
+            Grid.Row="2" 
+            Grid.Column="1">
+            <StackPanel 
+                x:Name="DevicePartList">
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel 
+            HorizontalAlignment="Left" 
+            Grid.Row="1" 
+            Grid.Column="1">
+            <TextBlock 
+                Style="{StaticResource TextBlockBase}"
+                x:Name="DeviceName" 
+                Text="Название телефона"/>
+            
+            <TextBlock 
+                Style="{StaticResource TextBlockBase}"
+                x:Name="DeviceArticle" 
+                Text="Артикул телефона"/>
+            
+            <TextBlock 
+                Style="{StaticResource TextBlockBase}"
+                x:Name="DeviceReleaseYear"
+                Text="Год релиза телефона" />
+        </StackPanel>
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Grid.Column="1"
+            Background="{StaticResource BGPrimaryColor}"
+            Panel.ZIndex="-1"/>
+    </Grid>
+</Page>

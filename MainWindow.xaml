@@ -1,0 +1,55 @@
+﻿<Window x:Class="DeviceRepairCRM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Background="{StaticResource BGDarkColor}"
+        Top="10"
+        Title="DesemberDesk" Height="1080" Width="1920">
+    
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="{StaticResource BGSecondaryColor}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+
+            <Border Style="{StaticResource MainMenuBorder}">
+                <Button x:Name="OrderFrameBt" 
+                        Content="Заказы"
+                        Click="OrderFrameBt_Click"
+                        Style="{StaticResource MainMenuButton}"/>
+            </Border>
+            <Border Style="{StaticResource MainMenuBorder}">
+                <Button x:Name="MasterFrameBt"
+                        Content="Мастера"
+                        Style="{StaticResource MainMenuButton}"
+                        Click="MasterFrameBt_Click"/>
+            </Border>
+            <Border Style="{StaticResource MainMenuBorder}">
+                <Button x:Name="DeviceFrameBt" 
+                        Content="Склад"
+                        Style="{StaticResource MainMenuButton}"
+                        Click="DeviceFrameBt_Click"/>
+            </Border>
+            <Border Style="{StaticResource MainMenuBorder}">
+                <Button x:Name="StatisticFrameBt" 
+                        Content="Статистика" 
+                        Style="{StaticResource MainMenuButton}"
+                        Click="OrderFrameBt_Click"/>
+            </Border>
+            <Border Style="{StaticResource MainMenuBorder}">
+                <Button x:Name="FastOrderFrameBt"
+                        Style="{StaticResource MainMenuButton}"
+                        FontSize="20"
+                        Click="FastOrderFrameBt_Click">
+                    <TextBlock TextWrapping="Wrap" Text="Быстрый заказ"/>
+                </Button>
+            </Border>
+        </StackPanel>
+        
+        <Frame Grid.Row="1" Grid.Column="1" Padding="10" x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

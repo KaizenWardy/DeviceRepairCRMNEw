@@ -1,0 +1,20 @@
+﻿DeviceRepairCRM
+
+
+winexe
+C#
+.cs
+C:\Users\User\Desktop\валеева\ВАЛЕЕВА 2023\дип\DeviceRepairCRM-main\DeviceRepairCRM\obj\Debug\
+DeviceRepairCRM
+none
+false
+DEBUG;TRACE
+C:\Users\User\Desktop\валеева\ВАЛЕЕВА 2023\дип\DeviceRepairCRM-main\DeviceRepairCRM\App.xaml
+16-596261700
+
+20-1502467895
+151937372271
+Frames\DeviceFrame.xaml;Frames\MasterFrame.xaml;Frames\NewOrderFrames\ClientFrame.xaml;Frames\NewOrderFrames\DeviceSelectFrame.xaml;Frames\NewOrderFrames\NewOrderInfoFrame.xaml;NewOrderWindow.xaml;Styles\Colors.xaml;Styles\Style.xaml;UserControls\DeviceFramePartsUC.xaml;UserControls\DeviceFrameUC.xaml;MainWindow.xaml;Frames\OrderFrame.xaml;UserControls\DeviceSelectUC.xaml;UserControls\MasterFrameUC.xaml;UserControls\NewOrderClientUC.xaml;UserControls\OrderFrameUC.xaml;
+
+False
+
