@@ -15,11 +15,12 @@
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0">
+        <StackPanel Grid.Row="1">
             <TextBlock
                 Style="{StaticResource MiniTextBlock}"
                 Margin="0,10"
@@ -30,8 +31,7 @@
                 x:Name="FName"
                 Grid.Row="1" 
                 Margin="10"
-                Width="180" 
-                Text=""
+                Width="180"
                 TextChanged="ClientName_TextChanged"/>
 
             <TextBlock 
@@ -43,8 +43,7 @@
                 Style="{StaticResource MiniTextBox}"
                 x:Name="SName" 
                 Margin="10" 
-                Width="180" 
-                Text=""
+                Width="180"
                 TextChanged="ClientName_TextChanged"/>
 
             <TextBlock
@@ -56,29 +55,26 @@
                 Style="{StaticResource MiniTextBox}"
                 x:Name="Phone"
                 Margin="10"
-                Width="180" 
-                Text=""  
+                Width="180"
                 TextChanged="ClientName_TextChanged"
                 PreviewTextInput="Phone_PreviewTextInput" />
 
+        </StackPanel>
+        
             <Border 
                 Style="{StaticResource MiniBtBorder}"
-                    Width="100"
                     x:Name="ClearClientNameBorder"
-                    Visibility="Hidden">
+                Grid.Row="2">
                 <Button 
                         Style="{StaticResource MiniButton}"
                         x:Name="ClearClientName"
-                        Width="100"
-                        Height="30"
-                    FontSize="12"
                         Content="Очистить"
                         Click="ClearClientName_Click"/>
             </Border>
-        </StackPanel>
+        
 
         <ScrollViewer 
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="1">
             <StackPanel
                 x:Name="ClientNameList">
@@ -87,16 +83,9 @@
 
         <Border 
             x:Name="NewClient_Button_border"
-            Style="{StaticResource MiniBtBorder}"
-            Grid.Row="1" 
-            Margin="5"
-            Width="100"
-            Visibility="Visible">
+            Style="{StaticResource MiniBtBorder}">
             <Button 
                 Style="{StaticResource MiniButton}"
-                FontSize="12"
-                Width="100"
-                Height="30"
                 x:Name="NewClient_Button" 
                 Content="Новый Клиент"
             Click="NewClient_Button_Click"/>
@@ -104,16 +93,10 @@
         <Border 
             x:Name="NextBtBorder"
             Style="{StaticResource MiniBtBorder}"
-            Grid.Row="1"
-            Grid.Column="1"
-            Margin="5"
-            Width="100"
-            Visibility="Hidden">
+            Grid.Row="2"
+            Grid.Column="1">
             <Button 
                 Style="{StaticResource MiniButton}"
-                FontSize="12"
-                Width="100"
-                Height="30"
                 x:Name="NextBt" 
                 Content="Продолжить"
             Click="NextBt_Click"/>

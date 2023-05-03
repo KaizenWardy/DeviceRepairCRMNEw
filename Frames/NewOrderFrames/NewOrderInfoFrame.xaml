@@ -33,13 +33,13 @@
                 Height="250"/>
         </StackPanel>
 
-        <Button
-            Style="{StaticResource MiniButton}"
-            x:Name="Continue_Button"
-            Visibility="Visible"
-            Grid.Row="2"
-            Grid.Column="0"
-            Margin="20,5"
-            Content="Создать заказ"/>
+        <Border Style="{StaticResource MiniBtBorder}"
+                    Grid.Row="2"
+                    x:Name="ClearDeviceNameBtBorder"
+            Margin="20,5">
+            <Button x:Name="ClearDeviceNameBt" 
+            Content="Создать заказ"
+                        Style="{StaticResource MiniButton}"/>
+        </Border>
     </Grid>
 </Page>

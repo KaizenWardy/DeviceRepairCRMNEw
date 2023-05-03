@@ -1,27 +1,13 @@
 ﻿using DeviceRepairCRM.UserControls;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace DeviceRepairCRM.Frames.NewOrderFrames
 {
     public partial class DeviceSelectFrame : Page
     {
         public int id;
-        public NewOrderWindow NewOrderWindow;
         public DeviceSelectFrame()
         {
             InitializeComponent();
@@ -30,9 +16,7 @@ namespace DeviceRepairCRM.Frames.NewOrderFrames
         private void DeviceMNf_TextChanged(object sender, TextChangedEventArgs e)
         {
             Grid_Loaded(sender, e);
-            ClearDeviceNameBt_Click(sender, e);
-            id = 0;
-                }
+        }
 
         private void ClearDeviceNameBt_Click(object sender, RoutedEventArgs e)
         {
@@ -41,7 +25,6 @@ namespace DeviceRepairCRM.Frames.NewOrderFrames
             DeviceArt.Text = string.Empty;
             
             id = 0;
-
         }
 
         private void NextBt_Click(object sender, RoutedEventArgs e)
@@ -52,10 +35,13 @@ namespace DeviceRepairCRM.Frames.NewOrderFrames
             }
             else
             {
-                NewOrderWindow.DeviceId = id;
-                NewOrderInfoFrame frame = new NewOrderInfoFrame();
-                frame.NewOrderWindow = NewOrderWindow;
-                NewOrderWindow.NewOrderFrame.Content = frame;
+                //NewOrderWindow.DeviceId = id;
+                //NewOrderInfoFrame frame = new NewOrderInfoFrame();
+                //frame.NewOrderWindow = new NewOrderWindow();
+                //NewOrderWindow.NewOrderFrame.Content = frame;
+
+                NewOrderWindow window = new NewOrderWindow();
+                window.NewOrderFrame.Content = new NewOrderInfoFrame();
             }
         }
 
@@ -108,9 +94,9 @@ namespace DeviceRepairCRM.Frames.NewOrderFrames
                                ,[Article]
                                ,[Model])
                          VALUES
-                               ({DeviceMNf.Text},>
-                               ,{DeviceArt.Text},>
-                               ,{DeviceMdl.Text},>)");
+                               ('{DeviceMNf.Text}'
+                               ,'{DeviceArt.Text}'
+                               ,'{DeviceMdl.Text}')");
                 ClearDeviceNameBt_Click(sender, e);
                 Grid_Loaded(sender, e);
             }

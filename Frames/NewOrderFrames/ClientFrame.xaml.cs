@@ -104,9 +104,7 @@ namespace DeviceRepairCRM.Frames.NewOrderFrames
             else
             {
                 NewOrderWindow.ClientId = id;
-                DeviceSelectFrame frame = new DeviceSelectFrame();
-                frame.NewOrderWindow = new NewOrderWindow();
-                NewOrderWindow.NewOrderFrame.Content = frame;
+                NewOrderWindow.NewOrderFrame.Content = new DeviceSelectFrame();
             }
         }
     }
